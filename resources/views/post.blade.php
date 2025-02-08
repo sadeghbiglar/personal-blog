@@ -16,3 +16,7 @@
     </div>
 </div>
 @endsection
+
+@livewire('like-button', ['post' => $post])
+
+@livewire('comments', ['post' => $post])

@@ -6,6 +6,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//###############################################
+
 use App\Http\Controllers\Admin\PostController;
 
 // گروه مسیرهای ادمین (نیاز به احراز هویت دارد)
@@ -17,6 +19,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('posts', PostController::class);
 });
 
+//###############################################
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -26,3 +30,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+//###############################################
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/post/{post:slug}', [HomeController::class, 'show'])->name('post.show');
+

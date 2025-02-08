@@ -36,3 +36,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/post/{post:slug}', [HomeController::class, 'show'])->name('post.show');
 
+//#####################################################
+
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CommentController;
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('users', UserController::class)->only(['index', 'destroy']);
+    Route::resource('comments', CommentController::class)->only(['index', 'destroy']);
+});

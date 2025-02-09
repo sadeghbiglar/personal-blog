@@ -37,7 +37,11 @@
     </div>
 
     <footer class="bg-gray-800 text-white text-center p-4 mt-4">
-        <p>تمامی حقوق محفوظ است. | شبکه‌های اجتماعی من: <a href="#" class="text-blue-400">لینک‌ها</a></p>
+        <p>تمامی حقوق محفوظ است. | شبکه‌های اجتماعی: 
+            <a href="#" class="text-blue-400 hover:underline">تلگرام</a> | 
+            <a href="#" class="text-blue-400 hover:underline">اینستاگرام</a>
+        </p>
     </footer>
+    
 </body>
 </html>

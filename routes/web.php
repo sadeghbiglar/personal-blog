@@ -45,3 +45,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('users', UserController::class)->only(['index', 'destroy']);
     Route::resource('comments', CommentController::class)->only(['index', 'destroy']);
 });
+
+//#######################################################
+use App\Http\Controllers\SearchController;
+
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+//################################################################

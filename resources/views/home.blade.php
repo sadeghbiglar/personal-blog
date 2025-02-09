@@ -4,6 +4,12 @@
 <div class="container mx-auto flex">
     <!-- ستون راست: سایدبار -->
     <aside class="w-1/4 p-4 bg-gray-100 rounded-lg">
+        <h3 class="text-lg font-bold mb-2">جستجو</h3>
+<form action="{{ route('search') }}" method="GET">
+    <input type="text" name="q" placeholder="عنوان یا متن پست..." class="w-full border p-2 rounded">
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-2 rounded">جستجو</button>
+</form>
+
         <h3 class="text-lg font-bold mb-2">دسته‌بندی‌ها</h3>
         <ul>
             @foreach ($categories as $category)
